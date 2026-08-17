@@ -37,4 +37,13 @@ public class Library{
             System.out.println("Undo successful: Removed" + book.getTitle());
         }
     }
+    public Book binarySearchhTitle(String title){
+        Book[] bookArray = books.toArray(new Book[0]);
+
+        if(bookArray.length == 0){
+            return null;
+        }
+        MergeSort.sort(bookArray, 0, bookArray.length -1);
+        return BinarySearch.search(bookArray, title);
+    }
 }
