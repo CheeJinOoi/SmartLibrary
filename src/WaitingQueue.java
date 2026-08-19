@@ -45,4 +45,11 @@ public class WaitingQueue {
             current = current.next;
         }
     }
+
+    public int size(){
+        int count = 0;
+        Node current = front;
+        while(current != null){ count++; current = current.next; }
+        return count;
+    }
 }

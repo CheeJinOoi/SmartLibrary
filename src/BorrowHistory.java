@@ -39,4 +39,24 @@ public class BorrowHistory {
             current = current.next;
         }
     }
+
+    public java.util.ArrayList<BorrowRecord> getRecords(){
+        java.util.ArrayList<BorrowRecord> records = new java.util.ArrayList<>();
+        Node current = head;
+        while(current != null){
+            records.add(current.data);
+            current = current.next;
+        }
+        return records;
+    }
+
+    public java.util.ArrayList<BorrowRecord> getRecordsForMember(String memberId){
+        java.util.ArrayList<BorrowRecord> records = new java.util.ArrayList<>();
+        Node current = head;
+        while(current != null){
+            if(memberId.equals(current.data.getMemberId())) records.add(current.data);
+            current = current.next;
+        }
+        return records;
+    }
 }
