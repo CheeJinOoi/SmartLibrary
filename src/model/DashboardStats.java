@@ -7,12 +7,13 @@ public class DashboardStats {
     public double outstandingFines;
     public String mostPopularBook;
     public int waitingMembers;
+    public int recentlyAdded;
 
     @Override
     public String toString() {
         return "Books: " + totalBooks + " | Available: " + availableBooks + " | Borrowed: " + borrowedBooks
             + " | Members: " + totalMembers + " | Overdue: " + overdueBooks + " | Fines: RM"
             + String.format("%.2f", outstandingFines) + " | Popular: " + mostPopularBook
-            + " | Waiting: " + waitingMembers;
+            + " | Waiting: " + waitingMembers + " | Recently added: " + recentlyAdded;
     }
 }

@@ -124,6 +124,18 @@ public class Library {
         database.saveMembers(getMembersSnapshot());
     }
 
+    public void ensureDefaultStudentAccount() {
+        Member existing = resolveMember("S-0001");
+        if (existing != null && existing.checkPassword("password123")) {
+            return;
+        }
+        Member student = new Member("S-0001", "Student 01", Member.TYPE_STUDENT,
+            "student1@smartlibrary.local", "password123");
+        if (existing != null) student.setOutstandingFine(existing.getOutstandingFine());
+        members.put(student.getMemberId(), student);
+        database.saveMembers(getMembersSnapshot());
+    }
+
     public Member login(String memberId, String password) {
         Member member = resolveMember(memberId);
         if (member != null && member.checkPassword(password)) {

@@ -52,4 +52,18 @@ public class WaitingQueue {
         while(current != null){ count++; current = current.next; }
         return count;
     }
+
+    public boolean isEmpty() {
+        return front == null;
+    }
+
+    public java.util.ArrayList<String> toList() {
+        java.util.ArrayList<String> result = new java.util.ArrayList<>();
+        Node current = front;
+        while (current != null) {
+            result.add(current.studentName);
+            current = current.next;
+        }
+        return result;
+    }
 }

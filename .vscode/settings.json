@@ -1,0 +1,15 @@
+{
+    "java.configuration.compiler.source": "17",
+    "java.configuration.compiler.target": "17",
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.project.outputPath": "out",
+    "java.project.referencedLibraries": [
+        "out/**/*.class"
+    ],
+    "java.project.resourceFilters": [
+        "src/*.java"
+    ],
+    "java.project.sourcePaths": [
+        "src"
+    ]
+}
